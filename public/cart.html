@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  ></script>
+  <link rel="stylesheet" href="./build/tailwind.css">
+    <title>Cart</title>
+</head>
+<body class="bg-gray-200 scroll-py-0">
+    <!-- menu-bar m -->
+    <div
+      class="px-5 md:hidden mt-11 mb-4 flex items-center justify-between w-full"
+    >
+      <div
+        class="w-8 h-8 bg-gray-50 rounded cursor-pointer flex justify-center items-center"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+      
+      </div>
+      <div class="text-slate-800 text-lg font-bold">سبد خرید</div>
+      <div
+      class="w-8 h-8 bg-gray-50 rounded cursor-pointer flex justify-center items-center"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.58317 17.4998C13.9554 17.4998 17.4998 13.9554 17.4998 9.58317C17.4998 5.21092 13.9554 1.6665 9.58317 1.6665C5.21092 1.6665 1.6665 5.21092 1.6665 9.58317C1.6665 13.9554 5.21092 17.4998 9.58317 17.4998Z"
+          stroke="#222F5D"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18.3332 18.3332L16.6665 16.6665"
+          stroke="#222F5D"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
+    </div>
+    <!--END menu-bar -->
+
+    <!-- Desktop NavBar -->
+    <nav
+      class="bg-white hidden md:block mb-5 px-5 py-2 sticky top-0 z-10 shadow-lg"
+    >
+      <div
+        class="container mx-auto max-w-screen-2xl hidden md:flex justify-between items-center"
+      >
+        <ul class="flex items-center gap-x-4 text-slate-800 text-lg">
+          <li>
+            <a class="cursor-pointer p-4 rounded-md" href="#">
+              <svg
+                width="99"
+                height="26"
+                viewBox="0 0 99 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.74402 1.40941V5.42118H4.73226V1.40941H8.74402ZM10.6852 12.9788C10.8577 12.9788 10.944 13.0651 10.944 13.2376V17.7412C10.944 17.9137 10.8577 18 10.6852 18H9.6499C9.37383 18 9.17539 17.9914 9.05461 17.9741C8.96834 19.182 8.71814 20.2086 8.30402 21.0541C7.8899 21.9169 7.22559 22.7106 6.31108 23.4353C5.41383 24.16 4.15422 24.9192 2.53226 25.7129L0.746376 21.7271C1.95422 21.0024 2.79971 20.4157 3.28285 19.9671C3.76598 19.5184 4.05932 19.0784 4.16285 18.6471C4.28363 18.2157 4.34402 17.5169 4.34402 16.5506V7.49177H9.10637V12.4094C9.10637 12.582 9.14951 12.72 9.23579 12.8235C9.33932 12.9271 9.47736 12.9788 9.6499 12.9788H10.6852ZM19.3572 12.7459C19.3572 13.6949 19.1243 14.5749 18.6584 15.3859C18.1925 16.1796 17.5627 16.818 16.769 17.3012C15.9752 17.7671 15.0952 18 14.129 18H10.6866C10.5141 18 10.4278 17.9137 10.4278 17.7412V13.2376C10.4278 13.0651 10.5141 12.9788 10.6866 12.9788H14.0772C14.2152 12.9788 14.336 12.9271 14.4396 12.8235C14.5431 12.72 14.5948 12.5906 14.5948 12.4353V6.76706H19.3572V12.7459ZM19.409 20.0706V24.0824H11.3854V20.0706H19.409ZM26.0939 18C25.1276 18 24.2476 17.7671 23.4539 17.3012C22.6602 16.818 22.0304 16.1796 21.5645 15.3859C21.0986 14.5749 20.8657 13.6949 20.8657 12.7459V0.322355H25.628V12.4353C25.628 12.6078 25.6711 12.7459 25.7574 12.8494C25.8609 12.9357 25.9904 12.9788 26.1457 12.9788H27.7245C27.897 12.9788 27.9833 13.0651 27.9833 13.2376V17.7412C27.9833 17.9137 27.897 18 27.7245 18H26.0939ZM35.7977 0.684708V4.69647H27.7742V0.684708H35.7977ZM31.0354 6.76706H35.7977V12.7459C35.7977 13.6949 35.5648 14.5749 35.0989 15.3859C34.633 16.1796 34.0032 16.818 33.2095 17.3012C32.4158 17.7671 31.5358 18 30.5695 18H27.7225C27.5499 18 27.4636 17.9137 27.4636 17.7412V13.2376C27.4636 13.0651 27.5499 12.9788 27.7225 12.9788H30.5177C30.6558 12.9788 30.7766 12.9271 30.8801 12.8235C30.9836 12.72 31.0354 12.5906 31.0354 12.4353V6.76706Z"
+                  fill="#222F5D"
+                />
+                <path
+                  d="M56.7374 12.9788C56.9099 12.9788 56.9962 13.0651 56.9962 13.2376V17.7412C56.9962 17.9137 56.9099 18 56.7374 18H56.0127C56.0472 18.3106 56.0644 18.5435 56.0644 18.6988C56.0644 19.7341 55.8056 20.6918 55.288 21.5718C54.7703 22.4518 54.0715 23.142 53.1915 23.6424C52.3115 24.16 51.3452 24.4188 50.2927 24.4188H44.1844C42.9076 24.4188 41.7256 24.0996 40.6386 23.4612C39.5515 22.8227 38.6888 21.96 38.0503 20.8729C37.4119 19.7859 37.0927 18.6039 37.0927 17.3271V10.4941H41.855V17.0682C41.855 17.7067 42.0793 18.2502 42.528 18.6988C42.9939 19.1647 43.546 19.3976 44.1844 19.3976H50.3703C50.5774 19.3976 50.7499 19.3286 50.888 19.1906C51.026 19.0525 51.095 18.8886 51.095 18.6988C51.095 18.509 51.026 18.3451 50.888 18.2071C50.7499 18.069 50.5774 18 50.3703 18H44.7021V12.9788H56.7374ZM56.739 18C56.5664 18 56.4802 17.9137 56.4802 17.7412V13.2376C56.4802 13.0651 56.5664 12.9788 56.739 12.9788H62.5366C63.71 12.9788 64.7108 12.6165 65.539 11.8918L67.5837 10.08L64.6072 8.63059C64.3657 8.52706 64.1759 8.47529 64.0378 8.47529C63.7272 8.47529 63.4166 8.61333 63.1061 8.88941L60.4143 11.8659L57.1013 8.96706L59.819 5.65412C60.3712 4.99843 61.0182 4.52392 61.7602 4.23059C62.5021 3.92 63.2441 3.76471 63.9861 3.76471C64.8488 3.76471 65.6684 3.97177 66.4449 4.38588L71.9837 6.97412C72.07 7.00863 72.139 7.02588 72.1908 7.02588C72.2598 7.02588 72.3115 7.02588 72.3461 7.02588H75.5296V11.6847H72.2166V12.4094C72.2166 12.582 72.2598 12.72 72.3461 12.8235C72.4496 12.9271 72.5876 12.9788 72.7602 12.9788H75.9955C76.168 12.9788 76.2543 13.0651 76.2543 13.2376V17.7412C76.2543 17.9137 76.168 18 75.9955 18H72.7602C71.7421 18 70.9053 17.7584 70.2496 17.2753C69.6111 16.7749 69.0849 16.0502 68.6708 15.1012L68.1531 15.6188C67.2904 16.3953 66.3155 16.9906 65.2284 17.4047C64.1413 17.8016 63.0284 18 61.8896 18H56.739ZM59.9484 20.0706H63.9602V24.0824H59.9484V20.0706ZM84.6697 12.7459C84.6697 13.6949 84.4367 14.5749 83.9709 15.3859C83.505 16.1796 82.8752 16.818 82.0815 17.3012C81.2877 17.7671 80.4077 18 79.4415 18H75.9991C75.8266 18 75.7403 17.9137 75.7403 17.7412V13.2376C75.7403 13.0651 75.8266 12.9788 75.9991 12.9788H79.3897C79.5277 12.9788 79.6485 12.9271 79.752 12.8235C79.8556 12.72 79.9073 12.5906 79.9073 12.4353V6.76706H84.6697V12.7459ZM84.7215 20.0706V24.0824H76.6979V20.0706H84.7215ZM93.037 12.9788C93.4856 12.9788 93.7099 12.7976 93.7099 12.4353C93.7099 12.2973 93.6581 12.1851 93.5546 12.0988C93.4511 11.9953 93.2095 11.8141 92.8299 11.5553L87.0064 7.54353L89.724 3.60941L96.324 8.19059C97.0315 8.74275 97.5664 9.32941 97.9287 9.95059C98.2911 10.5718 98.4723 11.3482 98.4723 12.28C98.4723 13.3671 98.2048 14.3506 97.6699 15.2306C97.1523 16.0933 96.4448 16.7749 95.5476 17.2753C94.6503 17.7584 93.6754 18 92.6228 18H86.1781V12.9788H93.037Z"
+                  fill="#FF755C"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-100 cursor-pointer p-4 rounded-md transition-all duration-300"
+              href="#"
+              >خانه</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-100 cursor-pointer p-4 rounded-md transition-all duration-300"
+              href="#"
+              >تلفن همراه</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-100 cursor-pointer p-4 rounded-md transition-all duration-300"
+              href="#"
+              >لپ تاپ</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:bg-gray-100 cursor-pointer p-4 rounded-md transition-all duration-300"
+              href="#"
+              >ساعت هوشمند</a
+            >
+          </li>
+        </ul>
+        <div class="flex-1 max-w-3xl">
+          <div class="bg-gray-100 flex items-center p-1 rounded-md">
+            <span class="mx-3">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.4167 24.5002C19.5378 24.5002 24.5 19.538 24.5 13.4168C24.5 7.29567 19.5378 2.3335 13.4167 2.3335C7.29552 2.3335 2.33334 7.29567 2.33334 13.4168C2.33334 19.538 7.29552 24.5002 13.4167 24.5002Z"
+                  stroke="#222F5D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M25.6667 25.6663L23.3333 23.333"
+                  stroke="#222F5D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              class="bg-transparent focus:outline-none w-full p-1.5 mr-2 text-slate-800 font-light"
+              placeholder="جستجوی نام محصول،نام برند،نام مدل و ..."
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END Desktop NavBar -->
+
+<div class=" flex ">
+            <!-- Cart items -->
+     <div class="flex flex-col gap-y-2 px-4 flex-1 mb-36">
+        <!-- first -->
+        <div class="bg-white rounded-lg shadow-lg md:p-4 p-2 flex items-stretch   justify-between">
+            <div class="w-20 ">
+                <img class=" w-full h-auto" src="../assets/img/Cart/1.png" alt="">
+            </div>
+            <div class=" flex flex-col justify-between item-stretch pr-4 md:items-start md:pr-20 flex-1  ">
+                <span class=" text-slate-700 md:font-bold md:text-lg ">ساعت هوشمند اپل سری 6</span>
+                <span class="  text-orange-400  md:text-xl">11,850,000 تومان</span>
+            </div>
+            <div class=" flex  flex-col  justify-between items-end">
+                <span class=" text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      
+                </span>
+                <div class=" flex  ">
+                    <span class=" h-6 w-6 bg-orange-200 text-orange-400 rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                          </svg>
+                      </span>
+                    <span class=" px-1.5 border rounded-md border-orange-400 mx-1 text-slate-700">1</span>
+                    <span class=" flex justify-center items-center w-6 h-6 bg-gray-200 text-slate-700 rounded-full">
+                          <svg class=" w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                          </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- sec -->
+        <div class="bg-white rounded-lg shadow-lg md:p-4 p-2   flex items-stretch   justify-between">
+            <div class="w-20 ">
+                <img class=" w-full h-auto" src="../assets/img/Cart/1.png" alt="">
+            </div>
+            <div class=" flex flex-1 flex-col justify-between item-stretch pr-4 md:items-start md:pr-20 ">
+                <span class=" text-slate-700 md:font-bold md:text-lg">ساعت هوشمند اپل سری 7</span>
+                <span class="  text-orange-400  md:text-xl">13,540,000 تومان</span>
+            </div>
+            <div class=" flex  flex-col  justify-between items-end">
+                <span class=" text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      
+                </span>
+                <div class=" flex  ">
+                    <span class=" h-6 w-6 bg-orange-200 text-orange-400 rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                          </svg>
+                      </span>
+                    <span class=" px-1.5 border rounded-md border-orange-400 mx-1 text-slate-700">2</span>
+                    <span class=" flex justify-center items-center w-6 h-6 bg-gray-200 text-slate-700 rounded-full">
+                          <svg class=" w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                          </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- third -->
+        <div class="bg-white rounded-lg shadow-lg md:p-4 p-2  flex items-stretch  md:hidden justify-between">
+            <div class="w-20 ">
+                <img class=" w-full h-auto" src="../assets/img/Cart/1.png" alt="">
+            </div>
+            <div class=" flex flex-col justify-between items-stretch pr-3 md:items-start md:pr-20 flex-1 ">
+                <span class=" text-slate-700 md:font-bold md:text-lg">ساعت هوشمند اپل سری 6</span>
+                <span class="  text-orange-400  md:text-xl">19,320,000 تومان</span>
+            </div>
+            <div class=" flex  flex-col  justify-between items-end">
+                <span class=" text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      
+                </span>
+                <div class=" flex  ">
+                    <span class=" h-6 w-6 bg-orange-200 text-orange-400 rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                          </svg>
+                      </span>
+                    <span class=" px-1.5 border rounded-md border-orange-400 mx-1 text-slate-700">3</span>
+                    <span class=" flex justify-center items-center w-6 h-6 bg-gray-200 text-slate-700 rounded-full">
+                          <svg class=" w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                          </svg>
+                    </span>
+                </div>
+            </div>
+        </div> 
+              <!-- third -->
+        <div class="bg-white rounded-lg shadow-lg md:p-4 p-2  flex items-stretch   justify-between">
+            <div class="w-20 ">
+                <img class=" w-full h-auto" src="../assets/img/Cart/1.png" alt="">
+            </div>
+            <div class=" flex flex-col justify-between items-stretch pr-3 md:items-start md:pr-20 flex-1 ">
+                <span class=" text-slate-700 md:font-bold md:text-lg">ساعت هوشمند اپل سری 6</span>
+                <span class="  text-orange-400  md:text-xl">19,320,000 تومان</span>
+            </div>
+            <div class=" flex  flex-col  justify-between items-end">
+                <span class=" text-orange-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                      
+                </span>
+                <div class=" flex  ">
+                    <span class=" h-6 w-6 bg-orange-200 text-orange-400 rounded-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                          </svg>
+                      </span>
+                    <span class=" px-1.5 border rounded-md border-orange-400 mx-1 text-slate-700">3</span>
+                    <span class=" flex justify-center items-center w-6 h-6 bg-gray-200 text-slate-700 rounded-full">
+                          <svg class=" w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                          </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <div class="   md:block hidden p-4 w-1/4">
+     <div class="bg-white w-full rounded-md ml-4 hidden md:flex flex-col p-4">
+
+        <div class="  w-full flex justify-between py-4">
+            <span class=" ">مجموع قیمت:</span>
+            <span class=" text-orange-500 ">13,854,000 تومان</span>
+        </div>
+
+        <div class="  w-full flex justify-between py-4">
+            <span class="    w-full font-extralight">کد تخفیف:</span>
+            <span class=" flex justify-end ">
+                <input class="border border-gray-400 outline-none rounded-l-none rounded-md border-l-0 w-2/5 px-1 text-center " type="text" placeholder="ABC" ">
+                <button class=" bg-orange-500  rounded-l-lg text-white p-1.5  ">تایید</button>
+            </span>
+        </div>
+
+        <div class="  w-full flex justify-between py-4">
+            <span class=" ">تخفیف:</span>
+            <span class="  ">250,000 تومان</span>
+        </div>
+
+        <div class="  w-full flex justify-between py-4">
+            <span class=" ">قیمت نهایی:</span>
+            <span class=" text-orange-500 ">13,550,000 تومان</span>
+        </div>
+
+        
+     </div>
+
+     <div class=" flex  justify-center flex-col mt-6 ">
+       <button class=" bg-orange-500 py-3 px-4 w-full rounded-md text-white shadow-lg ">ادامه فرایند خرید</button> 
+       <button class=" duration-300 hover:bg-white py-3 px-4 w-full rounded-md text-orange-500  shadow-lg  mt-2 border-2 border-orange-400">انصراف از خرید</button> 
+     </div>
+     
+    </div>
+</div>
+<button class=" bg-orange-500 py-3 px-4 w-full rounded-md text-white shadow-lg md:hidden fixed bottom-14 left-0 z-40 right-0  ">ادامه فرایند خرید</button> 
+<div class=" md:hidden shadow-[0_-4px_8px_0_rgba(0,0,0,0.1)] border-t-2 fixed flex justify-center items-center bottom-0 right-0 left-0 w-full rounded-tr-md rounded-tl-md bg-white px-4  ">
+    <nav class="w-full ">
+      <ul x-data=" {activeBottomTab:1 , activeTabClass:'text-slate-700 font-bold'} " class=" mt-3 flex items-center justify-between  gap-x-3 ">
+
+        <li  @click="activeBottomTab=1" :class="activeBottomTab===1?activeTabClass:'' "  class=" flex-auto text-gray-400 "><a class="flex items-center py-2 " href="#">
+          <span>
+            <svg class="ml-2" width="32" height="32" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M26.72 9.094 19.04 3.72c-2.093-1.466-5.307-1.386-7.32.174L5.04 9.107c-1.333 1.04-2.387 3.173-2.387 4.853v9.2c0 3.4 2.76 6.174 6.16 6.174h14.374c3.4 0 6.16-2.76 6.16-6.16v-9.04c0-1.8-1.16-4.014-2.627-5.04ZM17 24c0 .547-.453 1-1 1-.547 0-1-.453-1-1v-4c0-.546.453-1 1-1 .547 0 1 .454 1 1v4Z"/></svg>
+          </span>
+          <span x-show="activeBottomTab===1">
+            خانه
+          </span>
+        </a></li>
+
+        <li  @click="activeBottomTab=2" :class="activeBottomTab===2?activeTabClass:'' " class=" flex-auto text-gray-400 "><a class="flex items-center py-2 " href="#">
+          <span> 
+            <svg class="ml-2" width="34" height="34" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g><path d="M10.257 2.833H7.565c-3.102 0-4.732 1.63-4.732 4.718v2.692c0 3.088 1.63 4.717 4.718 4.717h2.692c3.088 0 4.717-1.629 4.717-4.717V7.55c.014-3.088-1.615-4.718-4.703-4.718ZM26.45 2.833h-2.692c-3.089 0-4.718 1.63-4.718 4.718v2.692c0 3.088 1.63 4.717 4.718 4.717h2.691c3.088 0 4.718-1.629 4.718-4.717V7.55c0-3.088-1.63-4.718-4.718-4.718ZM26.45 19.026h-2.692c-3.089 0-4.718 1.629-4.718 4.717v2.692c0 3.088 1.63 4.718 4.718 4.718h2.691c3.088 0 4.718-1.63 4.718-4.718v-2.692c0-3.088-1.63-4.717-4.718-4.717ZM10.257 19.026H7.565c-3.102 0-4.732 1.629-4.732 4.717v2.692c0 3.103 1.63 4.732 4.718 4.732h2.692c3.088 0 4.717-1.63 4.717-4.718v-2.692c.014-3.102-1.615-4.731-4.703-4.731Z"/></g></svg>
+          </span>
+          <span x-show="activeBottomTab===2">
+            دسته بندی
+          </span>
+        </a></li>
+
+        <li  @click="activeBottomTab=3" :class="activeBottomTab===3?activeTabClass:'' " class=" flex-auto text-gray-400 "><a class="flex items-center py-2 " href="#">
+          <span>
+            <svg class="ml-2" width="34" height="34" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M28.277 12.693c-.95-1.048-2.38-1.657-4.364-1.87V9.747a6.9 6.9 0 0 0-2.266-5.114c-1.46-1.332-3.358-1.955-5.327-1.771-3.386.326-6.233 3.598-6.233 7.14v.821c-1.984.213-3.415.822-4.364 1.87-1.374 1.53-1.331 3.57-1.176 4.987l.992 7.89c.298 2.763 1.417 5.597 7.508 5.597h7.905c6.092 0 7.211-2.834 7.509-5.582l.992-7.92c.155-1.402.184-3.442-1.176-4.972ZM16.518 4.831c1.417-.128 2.763.312 3.811 1.26a4.925 4.925 0 0 1 1.615 3.656v.991h-9.888v-.736c0-2.522 2.082-4.944 4.462-5.171Zm-4.59 13.798h-.014a1.42 1.42 0 0 1-1.416-1.416 1.424 1.424 0 0 1 2.848 0 1.42 1.42 0 0 1-1.418 1.416Zm9.917 0h-.014a1.42 1.42 0 0 1-1.417-1.416 1.424 1.424 0 0 1 2.848 0 1.42 1.42 0 0 1-1.417 1.416Z" /></svg>
+          </span>
+          <span x-show="activeBottomTab===3">
+            سبد خرید
+          </span>
+        </a></li>
+
+        <li  @click="activeBottomTab=4" :class="activeBottomTab===4?activeTabClass:'' " class=" flex-auto text-gray-400 "><a class="flex items-center py-2  " href="#">
+          <span>
+            <svg class="ml-2"  width="29" height="25" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.834.333a7.702 7.702 0 0 0-6.156 3.09A7.701 7.701 0 0 0 8.522.332C4.278.333.833 3.8.833 8.067c0 1.644.267 3.178.712 4.578 2.177 6.91 8.933 11.066 12.266 12.2.467.155 1.245.155 1.711 0 3.334-1.134 10.09-5.267 12.267-12.2.467-1.423.711-2.934.711-4.578C28.522 3.8 25.078.333 20.834.333Z" /></svg>
+          </span>
+          <span x-show="activeBottomTab===4">
+            مورد علاقه
+          </span>
+        </a></li>
+      </ul>
+    </nav>
+   </div>
+     <div class=" bg-white  justify-between items-stretch p-4 mt-4 hidden md:flex ">
+    <div class="  w-2/4 h-full flex flex-col pt-6">
+      <div> 
+        <svg
+        width="168"
+        height="45"
+        viewBox="0 0 168 45"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.5648 2.796V9.616H7.74478V2.796H14.5648ZM17.8648 22.464C18.1581 22.464 18.3048 22.6107 18.3048 22.904V30.56C18.3048 30.8533 18.1581 31 17.8648 31H16.1048C15.6354 31 15.2981 30.9853 15.0928 30.956C14.9461 33.0093 14.5208 34.7547 13.8168 36.192C13.1128 37.6587 11.9834 39.008 10.4288 40.24C8.90345 41.472 6.76211 42.7627 4.00478 44.112L0.968781 37.336C3.02211 36.104 4.45945 35.1067 5.28078 34.344C6.10211 33.5813 6.60078 32.8333 6.77678 32.1C6.98211 31.3667 7.08478 30.1787 7.08478 28.536V13.136H15.1808V21.496C15.1808 21.7893 15.2541 22.024 15.4008 22.2C15.5768 22.376 15.8114 22.464 16.1048 22.464H17.8648ZM32.6072 22.068C32.6072 23.6813 32.2112 25.1773 31.4192 26.556C30.6272 27.9053 29.5565 28.9907 28.2072 29.812C26.8579 30.604 25.3619 31 23.7192 31H17.8672C17.5739 31 17.4272 30.8533 17.4272 30.56V22.904C17.4272 22.6107 17.5739 22.464 17.8672 22.464H23.6312C23.8659 22.464 24.0712 22.376 24.2472 22.2C24.4232 22.024 24.5112 21.804 24.5112 21.54V11.904H32.6072V22.068ZM32.6952 34.52V41.34H19.0552V34.52H32.6952ZM44.0596 31C42.4169 31 40.9209 30.604 39.5716 29.812C38.2222 28.9907 37.1516 27.9053 36.3596 26.556C35.5676 25.1773 35.1716 23.6813 35.1716 22.068V0.947999H43.2676V21.54C43.2676 21.8333 43.3409 22.068 43.4876 22.244C43.6636 22.3907 43.8836 22.464 44.1476 22.464H46.8316C47.1249 22.464 47.2716 22.6107 47.2716 22.904V30.56C47.2716 30.8533 47.1249 31 46.8316 31H44.0596ZM60.5561 1.564V8.384H46.9161V1.564H60.5561ZM52.4601 11.904H60.5561V22.068C60.5561 23.6813 60.1601 25.1773 59.3681 26.556C58.5761 27.9053 57.5055 28.9907 56.1561 29.812C54.8068 30.604 53.3108 31 51.6681 31H46.8281C46.5348 31 46.3881 30.8533 46.3881 30.56V22.904C46.3881 22.6107 46.5348 22.464 46.8281 22.464H51.5801C51.8148 22.464 52.0201 22.376 52.1961 22.2C52.3721 22.024 52.4601 21.804 52.4601 21.54V11.904Z"
+          fill="#222F5D"
+        />
+        <path
+          d="M96.1535 22.464C96.4468 22.464 96.5935 22.6107 96.5935 22.904V30.56C96.5935 30.8533 96.4468 31 96.1535 31H94.9215C94.9802 31.528 95.0095 31.924 95.0095 32.188C95.0095 33.948 94.5695 35.576 93.6895 37.072C92.8095 38.568 91.6215 39.7413 90.1255 40.592C88.6295 41.472 86.9868 41.912 85.1975 41.912H74.8135C72.6428 41.912 70.6335 41.3693 68.7855 40.284C66.9375 39.1987 65.4708 37.732 64.3855 35.884C63.3002 34.036 62.7575 32.0267 62.7575 29.856V18.24H70.8535V29.416C70.8535 30.5013 71.2348 31.4253 71.9975 32.188C72.7895 32.98 73.7282 33.376 74.8135 33.376H85.3295C85.6815 33.376 85.9748 33.2587 86.2095 33.024C86.4442 32.7893 86.5615 32.5107 86.5615 32.188C86.5615 31.8653 86.4442 31.5867 86.2095 31.352C85.9748 31.1173 85.6815 31 85.3295 31H75.6935V22.464H96.1535ZM96.1562 31C95.8629 31 95.7162 30.8533 95.7162 30.56V22.904C95.7162 22.6107 95.8629 22.464 96.1562 22.464H106.012C108.007 22.464 109.708 21.848 111.116 20.616L114.592 17.536L109.532 15.072C109.122 14.896 108.799 14.808 108.564 14.808C108.036 14.808 107.508 15.0427 106.98 15.512L102.404 20.572L96.7723 15.644L101.392 10.012C102.331 8.89733 103.431 8.09067 104.692 7.592C105.954 7.064 107.215 6.8 108.476 6.8C109.943 6.8 111.336 7.152 112.656 7.856L122.072 12.256C122.219 12.3147 122.336 12.344 122.424 12.344C122.542 12.344 122.63 12.344 122.688 12.344H128.1V20.264H122.468V21.496C122.468 21.7893 122.542 22.024 122.688 22.2C122.864 22.376 123.099 22.464 123.392 22.464H128.892C129.186 22.464 129.332 22.6107 129.332 22.904V30.56C129.332 30.8533 129.186 31 128.892 31H123.392C121.662 31 120.239 30.5893 119.124 29.768C118.039 28.9173 117.144 27.6853 116.44 26.072L115.56 26.952C114.094 28.272 112.436 29.284 110.588 29.988C108.74 30.6627 106.848 31 104.912 31H96.1562ZM101.612 34.52H108.432V41.34H101.612V34.52ZM143.638 22.068C143.638 23.6813 143.242 25.1773 142.45 26.556C141.658 27.9053 140.588 28.9907 139.238 29.812C137.889 30.604 136.393 31 134.75 31H128.898C128.605 31 128.458 30.8533 128.458 30.56V22.904C128.458 22.6107 128.605 22.464 128.898 22.464H134.662C134.897 22.464 135.102 22.376 135.278 22.2C135.454 22.024 135.542 21.804 135.542 21.54V11.904H143.638V22.068ZM143.726 34.52V41.34H130.086V34.52H143.726ZM157.863 22.464C158.625 22.464 159.007 22.156 159.007 21.54C159.007 21.3053 158.919 21.1147 158.743 20.968C158.567 20.792 158.156 20.484 157.511 20.044L147.611 13.224L152.231 6.536L163.451 14.324C164.653 15.2627 165.563 16.26 166.179 17.316C166.795 18.372 167.103 19.692 167.103 21.276C167.103 23.124 166.648 24.796 165.739 26.292C164.859 27.7587 163.656 28.9173 162.131 29.768C160.605 30.5893 158.948 31 157.159 31H146.203V22.464H157.863Z"
+          fill="#FF755C"
+        />
+      </svg>
+  
+      </div>
+      <div class=" mt-11 text-xl leading-10 text-slate-600">
+        دیجیتایز عرصه کننده جدید ترین محصولات الکترونیک نظیر لپ تاپ و گوشی هوشمند و ساعت هوشمند میباشد. <br>دیجیتایز افتخار این را داشته است که به <span class="text-orange-500">123,000 نفر</span>تا به اکنون خدمات رسانی داشته باشد.
+        دیجیتایز عرصه کننده جدید ترین محصولات الکترونیک نظیر لپ تاپ و گوشی هوشمند و ساعت هوشمند میباشد. <br>دیجیتایز افتخار این را داشته است .  
+      </div>
+    </div>
+    <div class="flex flex-col gap-y-11  pt-8 justify-center">
+      <span class="font-bold text-lg text-slate-800">محصولات</span>
+      <span class=" text-slate-600 text-lg">تلفن همراه</span>
+      <span class=" text-slate-600 text-lg">لپ تاپ</span>
+      <span class=" text-slate-600 text-lg">ساعت هوشمند</span>
+    </div>
+    <div class="flex flex-col justify-center items-center">
+      <div>
+        <img class=" w-60 h-60 " src="../assets/img/14.png" alt="">
+         
+      </div>
+      <div class="flex flex-col justify-center items-center mt-4">
+        <span class="flex flex-row-reverse">
+          <svg width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.892 17.442 10.733 19.6a1.172 1.172 0 0 1-1.645.012c-.128-.128-.256-.245-.385-.373a33.148 33.148 0 0 1-3.255-3.816c-.956-1.33-1.726-2.66-2.286-3.978-.549-1.33-.829-2.602-.829-3.815 0-.793.14-1.551.42-2.252A5.37 5.37 0 0 1 4.095 3.43c.747-.735 1.563-1.097 2.427-1.097.326 0 .653.07.945.21.303.14.571.35.781.654l2.707 3.815c.21.292.362.56.467.817.105.244.163.49.163.711 0 .28-.082.56-.245.828a3.968 3.968 0 0 1-.653.829l-.887.921a.624.624 0 0 0-.187.467c0 .093.012.175.035.268.035.094.07.164.094.234.21.385.571.886 1.085 1.493a39.957 39.957 0 0 0 1.691 1.844c.117.116.245.233.362.35.467.455.478 1.201.012 1.668ZM25.632 21.385c0 .326-.059.665-.175.992-.035.093-.07.186-.117.28-.198.42-.455.816-.793 1.19-.572.63-1.202 1.085-1.914 1.376-.011 0-.023.012-.035.012a5.893 5.893 0 0 1-2.24.431c-1.19 0-2.461-.28-3.803-.851-1.342-.572-2.683-1.342-4.013-2.31-.455-.338-.91-.677-1.342-1.038l3.815-3.816c.327.245.618.432.863.56.059.024.129.059.21.094a.806.806 0 0 0 .292.047c.198 0 .35-.07.478-.199l.887-.875c.292-.291.572-.513.84-.653.268-.163.537-.245.828-.245.222 0 .455.047.712.152.257.105.525.256.817.455l3.861 2.741c.304.21.514.455.642.747.117.291.187.583.187.91Z" fill="#FF755C"/></svg>
+          <span>021-123456</span>
+        </span>
+        <span>
+          info@digitize.com
+        </span>
+      </div>
+    </div>
+  </div>
+  
+    </body>
+</html>
